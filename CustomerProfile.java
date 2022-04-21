@@ -1,11 +1,7 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class CustomerProfile {
     private ArrayList<Customer> customerDatabase;
-
-    private static int custIDCount = 1;
-    private int custID;
 
     // default constructor
     public CustomerProfile() {
@@ -19,8 +15,7 @@ public class CustomerProfile {
 
     // Create new customer with user input 
     public void addCustomer(String name, String address, int phone) {
-        Customer c = new Customer(name, address, phone, custID);
-        custID++;
+        Customer c = new Customer(name, address, phone);
         customerDatabase.add(c);
     }
 
