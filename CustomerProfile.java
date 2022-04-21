@@ -24,22 +24,5 @@ public class CustomerProfile {
         customerDatabase.add(c);
     }
 
-/*  ~~~~Possibly Remove ~~~~~
-    private static int custIDCount = 1;
-    private int custID;
-    public String name;
-    public String address;
-    public int phone;  
-
-    public void setCustomerData(String name, String address, int phone) {
-        this.custID = custIDCount;
-        this.name = name;
-        this.address = address;
-        this.phone = phone;
-        custIDCount++;
-    } 
-
-    public 
-*/
 
 }
