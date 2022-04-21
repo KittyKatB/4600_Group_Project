@@ -1,0 +1,50 @@
+
+public class Item {
+	private int id;
+	private String name;
+	private double price;
+	private int quantity;
+	
+	//constructor for Item
+	public Item(int idNew, String nameNew, double priceNew, int quantityNew) {
+	id = idNew;
+	name = nameNew;
+	price = priceNew;
+	quantity = quantityNew;
+}
+	//ITEM assessors
+	
+	public int getItemID() {
+		return id;
+	}
+	
+	public String getItemName() {
+		return name;
+	}
+	
+	public double getItemPrice() {
+		return price;
+	}
+	
+	public int getItemQuantity(){
+		return quantity;
+	}
+	
+	//ITEM Mutators
+	
+	public void setItemID(int b) {
+		id = b;
+	}
+	
+	public void getItemName(String b) {
+		name = b;
+	}
+	
+	public void setItemPrice(double b) {
+		price = b;
+	}
+	
+	public void setItemQuantity(int b) {
+		quantity = b;
+	}
+}
