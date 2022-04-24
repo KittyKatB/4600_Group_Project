@@ -1,29 +1,35 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.HashSet;
+
 public class SplashPage {
 
 	public static void main(String[] args) {
+
+
 		
-		//creates 3 employee objects & 1 manager
-		Employee Logan = new Employee("Logan");
-		Employee Katherine = new Employee("Katherine");
-		Employee Ryan = new Employee("Ryan");
-		Manager DrA = new Manager("Dr. Aguar", 154000.0);
-		
-		//Login Page for 
+		//Initial Login Page 
 		Scanner sc = new Scanner(System.in);
-		int input;
+		Integer input;
 		System.out.println("***Welcome to KLR's Restaurant Management Software***");
 		System.out.println("Please Enter Employee ID Below:");
 		input = sc.nextInt();
 		
+		
 		//Checks for manager
 		//I am hoping to find a way to use the employee ID to select an individual employee object
 		//to then do a logic check on its isManager boolean to then decide the operations available 
+
 		
-			if(Employee.getManagerStatus() == true) {
+	
+			for(int Id : employeeDatabase) {
+				if ()
+			}
+			
+			if(Employee.getId(input).getManagerStatus() == true) {
 				//prompt manager gets (Everything an employee gets, plus hire, fire, and restock)
 				Scanner scn = new Scanner(System.in);
-				System.out.println("Hello " + Manager.getName() + ".");
+				System.out.println("Hello " + DrA.getName() + ".");
 				System.out.println("To create an order, press (1),");
 				System.out.println("To restock an item, press (2),");
 				System.out.println("Next Menu (3)");
@@ -57,7 +63,7 @@ public class SplashPage {
 				
 			else {
 				//what the employees see (prompt for taking orders)
-				System.out.println("Welcome Valued Employee #" + Employee.getId);
+				System.out.println("Welcome Valued Employee #" + scn.getId());
 				System.out.println("Please Enter Order Below:");
 				
 				//Code for Ordering
