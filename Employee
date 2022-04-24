@@ -1,31 +1,64 @@
 
 public class Employee {
 
-	    private static int empIdCount = 1;
-	    private int ID;
-	    private String name;
+	    protected static int employeeCount = 0;
+	    protected int id;
+	    protected String name;
+	    //Im pretty sure this shouldnt be static but it wont let me run unless it is
+	    
+
 
 // Employee Constructors
-	    public Employee() {
-	        name = null;
-	        ID = empIdCount;
-	        empIdCount++;
+
+	    
+	    public Employee(String name) {
+	    	this.id = employeeCount;
+	    	this.name = name;
+	    	employeeCount++;
+
+	    	
 	    }
 
-	    public Employee(String name, String address, int phone) {
-	        this.name = name;
-	        ID = empIdCount;
-	        empIdCount++;
+
+
+	    public boolean getManagerStatus() {
+	    	return isManager;
 	    }
 	    
-// Employee Accessors
-	    public String getName() {
-	        return name;
-	    }
-	    
-	    
-//Employee Operations
-	    //includes: Creating an order object, 
-	    public
+	  //accessor for employee count
+		public int getEmployeeCount() {
+			
+			return employeeCount;
+		}
+	
+		
+		
+		//Accessor for id
+		public int getId(Integer input) {
+			return id;
+		}
+		
+		
+		//mutator for id
+		public void setId(int newid) {
+			id = newid;
+		}
+		
+		
+		
+		
+
+		
+		public void print() {
+			System.out.println("Employee ID: "+ id);
+
+		}
+
+		public String getName() {
+			return name;
+		}
+		
 
 }
+
+		
