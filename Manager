@@ -2,19 +2,20 @@
 public class Manager extends Employee{
 
 
-    protected double salary;
+    protected int updateAmt;
     
 	//Manager 
     
-	 public Manager(String name, double salary) {
-	        this.name = name;
-	        id = employeeCount;
-	        employeeCount++;
-	        isManager = true;
-	        this.salary = salary;
+	 public Manager() {
+	       updateAmt = 0;
 	    }
 	 
-
+public int getUpdateAmt() {
+return updateAmt;
+}
+public void setUpdateAmt(int amt) {
+updateAmt = amt;
+}
 	
 	
 }
