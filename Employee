@@ -1,8 +1,8 @@
 
 public class Employee {
 
-	    protected static int employeeCount = 0;
-	    protected int id;
+	    protected static Integer employeeCount = 0;
+	    protected String id;
 	    protected String name;
 	    //Im pretty sure this shouldnt be static but it wont let me run unless it is
 	    
@@ -12,7 +12,8 @@ public class Employee {
 
 	    
 	    public Employee(String name) {
-	    	this.id = employeeCount;
+	    	String s = Integer.toString(employeeCount);
+	    	this.id = "1" + s;
 	    	this.name = name;
 	    	employeeCount++;
 
@@ -21,10 +22,7 @@ public class Employee {
 
 
 
-	    public boolean getManagerStatus() {
-	    	return isManager;
-	    }
-	    
+
 	  //accessor for employee count
 		public int getEmployeeCount() {
 			
@@ -34,13 +32,13 @@ public class Employee {
 		
 		
 		//Accessor for id
-		public int getId(Integer input) {
+		public String getId(Integer input) {
 			return id;
 		}
 		
 		
 		//mutator for id
-		public void setId(int newid) {
+		public void setId(String newid) {
 			id = newid;
 		}
 		
