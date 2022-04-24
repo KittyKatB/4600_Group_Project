@@ -7,11 +7,11 @@ public class Manager extends Employee{
 	//Manager 
     
 	 public Manager(String name) {
+		 	super(name);
 		 	String d = Integer.toString(employeeCount);
 		 	id = "2" + d;
-	        this.name = name;
-	     
-	        employeeCount++;
+	        	this.name = name;	     
+	        	employeeCount++;
 
 	    }
 
