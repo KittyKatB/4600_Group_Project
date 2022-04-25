@@ -73,7 +73,6 @@ public class Menu{
 			}
 			
 		}
-		System.out.println(soupTally + saladTally + sandTally + pastaTally + cakeTally + pieTally);
 
 		
 		double pat = 0;
@@ -85,7 +84,8 @@ public class Menu{
 		pat = pat + (cakeTally * menu.get("cake")) + (pieTally * menu.get("pie"));
 		pat = pat * 1.08;
 		
-		System.out.println(pat);
+		System.out.println("Total Price, plus tax: " + pat);
+		System.out.println("Thank You!");
 		
 	}
 	
