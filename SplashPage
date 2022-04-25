@@ -1,78 +1,90 @@
 import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.HashSet;
 
 public class SplashPage {
 
 	public static void main(String[] args) {
 
 
-		
-		//Initial Login Page 
-		Scanner sc = new Scanner(System.in);
-		Integer input;
-		System.out.println("***Welcome to KLR's Restaurant Management Software***");
-		System.out.println("Please Enter Employee ID Below:");
-		input = sc.nextInt();
-		
-		
-		//Checks for manager
-		//I am hoping to find a way to use the employee ID to select an individual employee object
-		//to then do a logic check on its isManager boolean to then decide the operations available 
 
 		
-	
-			for(int Id : employeeDatabase) {
-				if ()
-			}
-			
-			if(Employee.getId(input).getManagerStatus() == true) {
+
+		//Initial Login Page 
+		
+		System.out.println("***Welcome to KLR's Restaurant Management Software***");
+		System.out.println();
+		System.out.println("Press M for Manager | Press E for Employee");
+		
+		Scanner sc = new Scanner(System.in);
+		char p = sc.next().charAt(0);
+		
+		
+
+		
+				
+		//Checks for manager
+					
+
+				
+		if(p == 'M') {
 				//prompt manager gets (Everything an employee gets, plus hire, fire, and restock)
-				Scanner scn = new Scanner(System.in);
-				System.out.println("Hello " + DrA.getName() + ".");
+				System.out.println("Hello "  + "!");
 				System.out.println("To create an order, press (1),");
 				System.out.println("To restock an item, press (2),");
 				System.out.println("Next Menu (3)");
-				int num = sc.nextInt();
+				Scanner scn = new Scanner(System.in);
+				char num = sc.next().charAt(0);
 				
-				if(num == 1) {
+				if(num == '1') {
 					//Create order code
+					System.out.print("order");
 					
 				}
-				else if (num == 2) {
+				else if (num == '2') {
 					//Restock code
+					System.out.print("Restock");
+
 					
 				}
-				else if (num==3) {
+				else if (num== '3') {
 					Scanner hf = new Scanner(System.in);
 
 					System.out.println("To hire a new Employee, press (1),");
-					System.out.println("To fire an Employee, press (2),");
-					int hfn = sc.nextInt();
+					System.out.println("To fire an Employee, press (2)");
+					System.out.print("To View Employee Database, Press (3)");
+
+					char hfn = sc.next().charAt(0);
 					
-					if(hfn == 1) {
+					if(hfn == '1') {
 						//Add employee
+						System.out.print("hire");
+
 					}
-					else if(hfn == 2) {
+					else if(hfn == '2') {
 						//remove employee
+						System.out.print("fire");
+
+					}
+					else if(hfn =='3') {
+						//Print database
+						System.out.print("print");
+
 					}
 				}
 				
-				
-				
-				
-			else {
-				//what the employees see (prompt for taking orders)
-				System.out.println("Welcome Valued Employee #" + scn.getId());
-				System.out.println("Please Enter Order Below:");
-				
-				//Code for Ordering
 
 			}
 			
+		
+		else if (p == 'E') {
+			//what the employees see (prompt for taking orders)
+			System.out.println("Welcome Valued Employee");
+			System.out.println("Please Enter Order Below:");
+			
+			//Code for Ordering
+
 		}
 		
-		
 	}
-
 }
+
+
