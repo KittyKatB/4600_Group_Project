@@ -41,10 +41,10 @@ public class SplashPage {
 				if(n == '1') {
 					//order code
 					m.printMenu();
+					m.populateMenu();
 					Scanner mo = new Scanner(System.in);
 					String stf = mo.next();
 					m.totalPrice(stf);
-					
 					
 					
 				}
