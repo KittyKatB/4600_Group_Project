@@ -36,7 +36,7 @@ public class restaurant {
 	
 	public void addEmp(String name) {
 		Employee e = new Employee(name);
-		empData.add(employeeCount,e);
+		empData.add(e);
 
 	}
 
