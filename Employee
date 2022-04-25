@@ -1,10 +1,9 @@
 
 public class Employee {
 
-	    protected static Integer employeeCount = 0;
-	    protected String id;
+	    protected static int employeeCount = 0;
+	    protected int id;
 	    protected String name;
-	    //Im pretty sure this shouldnt be static but it wont let me run unless it is
 	    
 
 
@@ -12,51 +11,72 @@ public class Employee {
 
 	    
 	    public Employee(String name) {
-	    	String s = Integer.toString(employeeCount);
-	    	this.id = "1" + s;
+	    	id = employeeCount;
 	    	this.name = name;
 	    	employeeCount++;
 
 	    	
 	    }
+	    public Employee() {
+	    	id = employeeCount;
+	    	employeeCount++;
+
+	    	
+	    }
+	    
+	  //checks to see if employees are equal
+		public boolean equals(Employee e2) {
+			if(name == e2.getName()) {
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
 
 
-
-
-	  //accessor for employee count
-		public int getEmployeeCount() {
+		//accessor for employee count
+		public static int getEmployeeCount() {
 			
 			return employeeCount;
 		}
-	
 		
 		
 		//Accessor for id
-		public String getId(Integer input) {
+		public int getId( ) {
 			return id;
 		}
 		
 		
 		//mutator for id
-		public void setId(String newid) {
+		public void setId(int newid) {
 			id = newid;
 		}
 		
 		
 		
-		
-
-		
-		public void print() {
-			System.out.println("Employee ID: "+ id);
-
-		}
-
+		//accessor for name
 		public String getName() {
 			return name;
 		}
 		
-
-}
+		
+		//mutator for name
+		public void setName(String newName) {
+			name = newName;
+		}
+		
 
 		
+		public void print() {
+			System.out.print("Employee: " + id + " ");
+			System.out.println(name);
+		}
+		
+		public void addEmp(String name) {
+			this.name=name;
+			id = employeeCount;
+			employeeCount++; 
+			
+		}
+		}
