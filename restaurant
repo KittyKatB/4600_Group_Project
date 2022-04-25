@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class restaurant {
 	private ArrayList<Employee> empData;
-	private static int employeeCount=0; 
+	private static int employeeCount = 0; 
 	public static int numEmpl = 3;
 	
 	public restaurant() {
@@ -22,7 +22,7 @@ public class restaurant {
 		empData.add(m);
 		String[] Names ={"Logan", "Ryan", "Katherine"};
 		m.print();
-		for(int i =0; i<numEmpl; i++)
+		for(int i =0; i<= numEmpl; i++)
 		{
 			Employee e = new Employee(Names[i]);
 			e.print();
