@@ -2,7 +2,7 @@ import java.util.HashSet;
 
 public class Employee {
 
-	HashSet<String> employees = new HashSet<String>();
+	static HashSet<String> employees = new HashSet<String>();
 	
 	protected static int employeeCount = 0;
 	protected String name;
@@ -10,13 +10,13 @@ public class Employee {
 // Employee Constructors
 	
 		// add employee name to HashSet
-	    public Employee(String name) {
+	    public static void addEmployee(String name) {
 	    	employees.add(name);
 	    	employeeCount++;
 	    }
 	    
 		// check if employee exists
-		public boolean checkEmployee(String name) {
+		public static boolean checkEmployee(String name) {
 			if(employees.contains(name)) {
 				return true;
 			}
@@ -26,14 +26,14 @@ public class Employee {
 		}
 		
 		// change employee name
-		public void changeName(String oldName, String newName) {
+		public static void changeName(String oldName, String newName) {
 			employees.remove(oldName);
 			employees.add(newName);
 			System.out.println(newName + " has beeen added to your employees.");
 		}
 
 		// remove employee
-		public void removeEmployee(String name) {
+		public static void removeEmployee(String name) {
 			employees.remove(name);
 			employeeCount--;
 			System.out.println("Removal of " + name + " complete.");
@@ -42,6 +42,13 @@ public class Employee {
 		//accessor for employee count
 		public static int getEmployeeCount() {
 			return employeeCount;
+		}
+		
+		// display all employees
+		public static void employeeDatabase() {
+			for (String i : employees) {
+				System.out.println(i);
+			}
 		}
 		
 		
