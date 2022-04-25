@@ -1,82 +1,48 @@
+import java.util.HashSet;
 
 public class Employee {
 
-	    protected static int employeeCount = 0;
-	    protected int id;
-	    protected String name;
-	    
-
+	HashSet<String> employees = new HashSet<String>();
+	
+	protected static int employeeCount = 0;
+	protected String name;
 
 // Employee Constructors
-
-	    
+	
+		// add employee name to HashSet
 	    public Employee(String name) {
-	    	id = employeeCount;
-	    	this.name = name;
+	    	employees.add(name);
 	    	employeeCount++;
-
-	    	
-	    }
-	    public Employee() {
-	    	id = employeeCount;
-	    	employeeCount++;
-
-	    	
 	    }
 	    
-	  //checks to see if employees are equal
-		public boolean equals(Employee e2) {
-			if(name == e2.getName()) {
-					return true;
-				}
-				else {
-					return false;
-				}
+		// check if employee exists
+		public boolean checkEmployee(String name) {
+			if(employees.contains(name)) {
+				return true;
 			}
+			else {
+				return false;
+			}
+		}
+		
+		// change employee name
+		public void changeName(String oldName, String newName) {
+			employees.remove(oldName);
+			employees.add(newName);
+			System.out.println(newName + " has beeen added to your employees.");
+		}
 
-
+		// remove employee
+		public void removeEmployee(String name) {
+			employees.remove(name);
+			employeeCount--;
+			System.out.println("Removal of " + name + " complete.");
+		}
+		
 		//accessor for employee count
 		public static int getEmployeeCount() {
-			
 			return employeeCount;
 		}
 		
 		
-		//Accessor for id
-		public int getId( ) {
-			return id;
-		}
-		
-		
-		//mutator for id
-		public void setId(int newid) {
-			id = newid;
-		}
-		
-		
-		
-		//accessor for name
-		public String getName() {
-			return name;
-		}
-		
-		
-		//mutator for name
-		public void setName(String newName) {
-			name = newName;
-		}
-		
-
-		
-		public void print() {
-			System.out.print("Employee: " + id + " ");
-			System.out.println(name);
-		}
-		
-		public void addEmp(String name) {
-			this.name=name;
-			id = employeeCount;
-			employeeCount++; 
-			
-		}
-		}
+	}
