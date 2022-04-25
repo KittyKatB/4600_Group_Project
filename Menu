@@ -1,0 +1,44 @@
+import java.util.*;
+
+public class Menu {
+
+	public HashMap<Integer, Items> menu;
+	public Menu() {
+		menu = new HashMap<Integer,Items>();
+	}
+	public HashMap<Integer,Items> getMenu() {
+		return menu;
+	}
+
+	public void addMenu(int id, String name, double price, int quantity) {
+		Items soup = new Items(0, "soup", 2, 15);
+		Items salad = new Items(1, "salad", 3, 10);
+		Items sandwich = new Items(2, "sandwich", 5, 20);
+		Items pasta = new Items(3, "pasts", 7, 12);
+		Items cake = new Items(4, "cake", 4, 8);
+		Items pie = new Items(5, "pie", 4, 8);
+		menu.put(soup.getItemID(), soup);
+		menu.put(salad.getItemID(), salad);
+		menu.put(sandwich.getItemID(), sandwich);
+		menu.put(pasta.getItemID(), pasta);
+		menu.put(cake.getItemID(), cake);
+		menu.put(pie.getItemID(), pie);
+		System.out.println(soup);
+	}
+	
+	public void pintMenu() {
+		System.out.println("Name Price");
+		System.out.println(menu.get(0));
+		System.out.println(menu.get(1));
+		System.out.println(menu.get(2));
+		System.out.println(menu.get(3));
+		System.out.println(menu.get(4));
+		System.out.println(menu.get(5));
+	}
+}
+	
+	
+	
+	
+	
+
