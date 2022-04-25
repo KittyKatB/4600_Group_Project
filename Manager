@@ -1,82 +1,39 @@
 
-public class Employee {
+public class Manager extends Employee{
 
-	    protected static int employeeCount = 0;
-	    protected int id;
-	    protected String name;
-	    
+    
+	//Manager 
+    
+	 public Manager(String name) {
+		 	super(name);
+		 	id = employeeCount;   
+	        employeeCount++;
 
-
-// Employee Constructors
-
-	    
-	    public Employee(String name) {
-	    	id = employeeCount;
-	    	this.name = name;
-	    	employeeCount++;
-
-	    	
 	    }
-	    public Employee() {
-	    	id = employeeCount;
-	    	employeeCount++;
+	 public Manager() {
+		 	id = employeeCount;   
+	        employeeCount++;
 
-	    	
 	    }
-	    
-	  //checks to see if employees are equal
-		public boolean equals(Employee e2) {
-			if(name == e2.getName()) {
-					return true;
-				}
-				else {
-					return false;
-				}
-			}
 
 
-		//accessor for employee count
-		public static int getEmployeeCount() {
-			
-			return employeeCount;
-		}
-		
-		
-		//Accessor for id
-		public int getId( ) {
-			return id;
-		}
-		
-		
-		//mutator for id
-		public void setId(int newid) {
-			id = newid;
-		}
-		
-		
-		
-		//accessor for name
-		public String getName() {
-			return name;
-		}
-		
-		
-		//mutator for name
-		public void setName(String newName) {
-			name = newName;
-		}
-		
-
-		
+	
 		public void print() {
-			System.out.print("Employee: " + id + " ");
-			System.out.println(name);
+			System.out.println("Manager: " + id + " " + name);
 		}
+
 		
-		public void addEmp(String name) {
-			this.name=name;
-			id = employeeCount;
-			employeeCount++; 
-			
+		public boolean equals(Manager manager2) {
+			if(name == manager2.name) {
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
-		}
+
+	 
+
+	
+	
+}
