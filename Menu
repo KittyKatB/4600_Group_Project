@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Menu{
 
@@ -24,13 +25,47 @@ public class Menu{
 	}
 	
 	public void printMenu() {
+		System.out.println("Press the Item's Associated Number for However Many You Want");
 		System.out.println("Menu:");
-		System.out.println("Soup: $2");
-		System.out.println("Salad: $3");
-		System.out.println("Sandwich: $5");
-		System.out.println("Pasta: $7");
-		System.out.println("Cake: $4");
-		System.out.println("Pie: $4");
+		System.out.println("(1)Soup: $2");
+		System.out.println("(2)Salad: $3");
+		System.out.println("(3)Sandwich: $5");
+		System.out.println("(4)Pasta: $7");
+		System.out.println("(5)Cake: $4");
+		System.out.println("(6)Pie: $4");
+	}
+	public void totalPrice(String str) {
+	
+		
+		int soupTally = 0;
+		int SaladTally = 0;
+		int SandTally = 0;
+		int PastaTally = 0;
+		int cakeTally = 0;
+		int pieTally = 0;
+		for(int i = 0; i < str.length(); i++) {
+			char input = str.charAt(i);
+			if(input == '1') {
+				soupTally++;
+			}
+			else if(input == '2') {
+				SaladTally++;
+			}
+			else if(input == '3') {
+				SandTally++;
+			}
+			else if(input == '4') {
+				PastaTally++;
+			}
+			else if(input == '5') {
+				cakeTally++;
+			}
+			else if(input == '6') {
+				pieTally++;
+			}
+			
+		}
+		
 		
 	}
 	
@@ -38,7 +73,3 @@ public class Menu{
 }
 	//make method that pulls out price (get object method), pulls id and returns specific obj
 	
-	
-	
-	
-
