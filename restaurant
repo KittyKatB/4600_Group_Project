@@ -1,0 +1,57 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class restaurant {
+	private ArrayList<Employee> empData;
+	private static int employeeCount=0; 
+	public static int numEmpl = 3;
+	
+	public restaurant() {
+		empData = new ArrayList<Employee>();
+		
+	}
+	
+	public ArrayList<Employee> getEmpData() {
+		System.out.print("out");
+		return empData;
+		
+	}
+	public void populateDatabase() {
+		
+		Manager m = new Manager("Dr. Aguar");
+		empData.add(m);
+		String[] Names ={"Logan", "Ryan", "Katherine"};
+		m.print();
+		for(int i =0; i<numEmpl; i++)
+		{
+			Employee e = new Employee(Names[i]);
+			e.print();
+			empData.add(e);
+			employeeCount++;
+			
+			
+		}
+		
+	}
+	
+	public void addEmp(String name) {
+		Employee e = new Employee(name);
+		empData.add(employeeCount,e);
+
+	}
+
+	protected void addManager(String name)
+	{
+		Manager m = new Manager(name);
+		empData.add(m);
+		
+	}
+	protected void printData() {
+		for(int i = 0; i < empData.size(); i++ ) {
+			System.out.println(empData.get(i));
+		}
+	}
+	
+	
+
+}
