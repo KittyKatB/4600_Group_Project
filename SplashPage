@@ -1,15 +1,15 @@
 import java.util.*;
 import java.util.HashSet;
 import java.util.Scanner;
-import java.util.HashMap;
 
 public class SplashPage {
 
 	public static void main(String[] args) {
 
 		restaurant KLR = new restaurant();
-		Menu m = new Menu();
 
+		Scanner key = new Scanner(System.in);
+		
 		//Initial Login Page 
 	    boolean b = true;
 	    while(b = true) {
@@ -20,6 +20,7 @@ public class SplashPage {
 		
 		Scanner sc = new Scanner(System.in);
 		char p = sc.next().charAt(0);
+
 				
 		//Checks for manager
 				
@@ -39,13 +40,8 @@ public class SplashPage {
 				char n = op.next().charAt(0);
 				
 				if(n == '1') {
-					//order code
-					m.printMenu();
-					m.populateMenu();
-					Scanner mo = new Scanner(System.in);
-					String stf = mo.next();
-					m.totalPrice(stf);
-					
+					//Create order code
+					System.out.print("order");
 					
 				}
 				else if (n == '2') {
@@ -55,9 +51,10 @@ public class SplashPage {
 					break;
 				
 						}
-				else if (n =='3') {
-					
-					//fire emp
+				else if (n =='3') { //terminate employee
+					System.out.print("Please enter the name of the employee you wish to terminate: ");
+					String name = key.nextLine();
+					checkEmployee
 					
 				}
 				else if (n == '4') {
@@ -68,21 +65,22 @@ public class SplashPage {
 					KLR.addEmp(na); 
 					
 				}
-			}
+		}
 		}
 				
 			
 		
 		else if (p == 'E') {
+			//sc.close();
 			//what the employees see (prompt for taking orders)
 			System.out.println("Welcome Valued Employee");
 			System.out.println("Please Enter Order Below:");
 			
 			//Code for Ordering
-			}
-		
+			
+							}
 		else {
-			System.out.println("Sorry, that couldnt be read,");
+			System.out.println("Sorry, that couldn't be read,");
 			System.out.println("Restarting the process");
 			continue;
 			}
@@ -91,6 +89,5 @@ public class SplashPage {
 }
 
 }
-
 
 
