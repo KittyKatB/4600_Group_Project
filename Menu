@@ -3,6 +3,15 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Menu{
+	
+	double soupTally;
+	double saladTally;
+	double sandTally;
+	double pastaTally;
+	double cakeTally;
+	double pieTally;
+	double pat;
+	
 
 	public HashMap<String, Double> menu = new HashMap<String, Double>();
 	
@@ -34,13 +43,13 @@ public class Menu{
 		System.out.println("(5)Cake: $4");
 		System.out.println("(6)Pie: $4");
 	}
-	public double totalPrice(String str) {
-		int soupTally = 0;
-		int saladTally = 0;
-		int sandTally = 0;
-		int pastaTally = 0;
-		int cakeTally = 0;
-		int pieTally = 0;
+	public void totalPrice(String str) {
+		soupTally = 0;
+		saladTally = 0;
+		sandTally = 0;
+		pastaTally = 0;
+		cakeTally = 0;
+		pieTally = 0;
 		
 		for(int i = 0; i < str.length(); i++) {
 			char input = str.charAt(i);
@@ -64,7 +73,11 @@ public class Menu{
 			}
 			
 		}
+		System.out.println(soupTally + saladTally + sandTally + pastaTally + cakeTally + pieTally);
+
+		
 		double pat = 0;
+		
 		
 		pat = (soupTally * menu.get("soup")) + (saladTally * menu.get("salad")); 
 		pat = pat + (sandTally * menu.get("sandwich"));
@@ -72,22 +85,12 @@ public class Menu{
 		pat = pat + (cakeTally * menu.get("cake")) + (pieTally * menu.get("pie"));
 		pat = pat * 1.08;
 		
-		return pat;
+		System.out.println(pat);
 		
 	}
-	/*
-	public double finalPrice() {
-		double pat = 0;
-		
-		pat = (soupTally * menu.get("soup")) + (saladTally * menu.get("salad")); 
-		pat = pat + (sandTally * menu.get("sandwich"));
-		pat = pat + (pastaTally * menu.get("pasta"));
-		pat = pat + (cakeTally * menu.get("cake")) + (pieTally * menu.get("pie"));
-		pat = pat * 1.08;
-		
-		return pat;
-	}
-	*/
+	
+
+	
 	
 }
 	//make method that pulls out price (get object method), pulls id and returns specific obj
