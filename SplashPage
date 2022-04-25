@@ -1,14 +1,16 @@
+import java.util.*;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class SplashPage {
 
 	public static void main(String[] args) {
 
-
-
-		
+		restaurant KLR = new restaurant();
 
 		//Initial Login Page 
+	    boolean b = true;
+	    while(b = true) {
 		
 		System.out.println("***Welcome to KLR's Restaurant Management Software***");
 		System.out.println();
@@ -16,75 +18,74 @@ public class SplashPage {
 		
 		Scanner sc = new Scanner(System.in);
 		char p = sc.next().charAt(0);
-		
-		
 
-		
 				
 		//Checks for manager
-					
-
 				
 		if(p == 'M') {
+			System.out.println("Please input Password:");
+			int password = 1234;
+			Scanner pass = new Scanner(System.in);	
+			int pw = pass.nextInt();
+			if(pw == password) {
 				//prompt manager gets (Everything an employee gets, plus hire, fire, and restock)
-				System.out.println("Hello "  + "!");
+				System.out.println("Hello "   + "!");
 				System.out.println("To create an order, press (1),");
-				System.out.println("To restock an item, press (2),");
-				System.out.println("Next Menu (3)");
-				Scanner scn = new Scanner(System.in);
-				char num = sc.next().charAt(0);
+				System.out.println("To Print Employee Database, press (2)");
+				System.out.println("To Fire employee, press (3)");
+				System.out.println("To Add a New Employee, press (4)");
+				Scanner op = new Scanner(System.in);
+				char n = op.next().charAt(0);
 				
-				if(num == '1') {
+				if(n == '1') {
 					//Create order code
 					System.out.print("order");
 					
 				}
-				else if (num == '2') {
-					//Restock code
-					System.out.print("Restock");
-
-					
-				}
-				else if (num== '3') {
-					Scanner hf = new Scanner(System.in);
-
-					System.out.println("To hire a new Employee, press (1),");
-					System.out.println("To fire an Employee, press (2)");
-					System.out.print("To View Employee Database, Press (3)");
-
-					char hfn = sc.next().charAt(0);
-					
-					if(hfn == '1') {
-						//Add employee
-						System.out.print("hire");
-
-					}
-					else if(hfn == '2') {
-						//remove employee
-						System.out.print("fire");
-
-					}
-					else if(hfn =='3') {
+				else if (n == '2') {
 						//Print database
-						System.out.print("print");
-
-					}
-				}
+					System.out.println("print");
+					KLR.populateDatabase();
+					break;
 				
-
-			}
+						}
+				else if (n =='3') {
+					
+					//fire emp
+					
+				}
+				else if (n == '4') {
+					//hirre emp
+					System.out.println("Enter the name of the employee: ");
+					Scanner name = new Scanner(System.in);
+					String na = name.nextLine();
+					KLR.addEmp(na); 
+					
+				}
+		}
+		}
+				
 			
 		
 		else if (p == 'E') {
+			sc.close();
 			//what the employees see (prompt for taking orders)
 			System.out.println("Welcome Valued Employee");
 			System.out.println("Please Enter Order Below:");
 			
 			//Code for Ordering
 
-		}
+							}
+		else {
+			System.out.println("Sorry, that couldnt be read,");
+			System.out.println("Restarting the process");
+			continue;
+			}
 		
 	}
 }
+
+}
+
 
 
