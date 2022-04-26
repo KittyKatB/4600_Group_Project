@@ -1,33 +1,21 @@
+
 public class Manager extends Employee{
 
-    
+	public static String manager;
+	
 	//Manager 
-    
-	 public Manager(String name) {
-		 	super(name);
-		 	id = employeeCount;   
-	        employeeCount++;
+	public void addManager(String name) {
+		manager = name;
+	    employeeCount++;
+	}
 
-	    }
-	 public Manager() {
-		 	id = employeeCount;   
-	        employeeCount++;
+	public static String print() {
+		return manager;
+	}
 
-	    }
+	
 
 
 	
-		public void print() {
-			System.out.println("Manager: " + id + " " + name);
-		}
-
-		
-		public boolean equals(Manager manager2) {
-			if(name == manager2.name) {
-				return true;
-			}
-			else {
-				return false;
-			}
-		}
-	}
+	
+}
