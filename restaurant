@@ -22,7 +22,7 @@ public class restaurant {
 		empData.add(m);
 		String[] Names ={"Logan", "Ryan", "Katherine"};
 		m.print();
-		for(int i =0; i<= numEmpl; i++)
+		for(int i =0; i< numEmpl; i++)
 		{
 			Employee e = new Employee(Names[i]);
 			e.print();
