@@ -1,8 +1,11 @@
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class restaurant {
 	private ArrayList<Employee> empData;
+	static HashSet<String> employees = new HashSet<String>();
 	private static int employeeCount = 0; 
 	public static int numEmpl = 3;
 	
@@ -10,13 +13,13 @@ public class restaurant {
 		empData = new ArrayList<Employee>();
 		
 	}
-	
+
 	public ArrayList<Employee> getEmpData() {
 		System.out.print("out");
 		return empData;
 		
 	}
-	public void populateDatabase() {
+	/* public void populateDatabase() {
 		
 		Manager m = new Manager("Dr. Aguar");
 		empData.add(m);
@@ -25,33 +28,55 @@ public class restaurant {
 		for(int i =0; i< numEmpl; i++)
 		{
 			Employee e = new Employee(Names[i]);
-			e.print();
 			empData.add(e);
 			employeeCount++;
 			
 			
-		}
-		
-	}
+		}*/
 	
+	//populate Database
+	public void populateData() {
+		employees.add("Dr. Aguar");
+		employees.add("Logan");
+		employees.add("Ryan");
+		employees.add("Katherine");
+	}
+	// display all employees
+	public  void employeeDatabase() {
+		Iterator<String> itr = employees.iterator();
+		while (itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+	}
+		
+		// add employee name to HashSet
+	    public void addEmployee(String name) {
+	    	employees.add(name);
+	    	employeeCount++;
+	    }
+		public void removeEmployee(String name) {
+			employees.remove(name);
+			employeeCount--;
+			System.out.println("Removal of " + name + " complete.");
+		}
+	
+	/*
 	public void addEmp(String name) {
 		Employee e = new Employee(name);
 		empData.add(e);
 
 	}
 
-	protected void addManager(String name)
+	protected void addManager(String name){
 	{
 		Manager m = new Manager(name);
 		empData.add(m);
 		
 	}
-	protected void printData() {
-		for(int i = 0; i < empData.size(); i++ ) {
-			System.out.println(empData.get(i));
-		}
+	*/
+
 	}
 	
 	
 
-}
+
