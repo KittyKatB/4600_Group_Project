@@ -11,8 +11,8 @@ public class SplashPage {
 		Scanner key = new Scanner(System.in);
 		
 		//Initial Login Page 
-	    boolean b = true;
-	    while(b = true) {
+	   // boolean b = true;
+	   // while(b = true) {
 		
 		System.out.println("***Welcome to KLR's Restaurant Management Software***");
 		System.out.println();
@@ -22,18 +22,16 @@ public class SplashPage {
 	
 		if(p == 'M') { //Checks for manager
 			System.out.println("Please input Password:");
-			int password = 1234;
-			Scanner pass = new Scanner(System.in);	
-			int pw = pass.nextInt();
+			int password = 1234;	
+			int pw = key.nextInt();
 			
 			if(pw == password) { // Manager Settings
-				System.out.println("Hello "   + "!");
+				System.out.println("Hello " + Manager.manager  + "!");
 				System.out.println("To create an order, press (1),");
 				System.out.println("To Print Employee Database, press (2)");
 				System.out.println("To Fire employee, press (3)");
 				System.out.println("To Add a New Employee, press (4)");
-				Scanner op = new Scanner(System.in);
-				char n = op.next().charAt(0);
+				char n = key.next().charAt(0);
 				
 				if(n == '1') {
 					//Create order code
@@ -46,7 +44,8 @@ public class SplashPage {
 				
 				else if (n =='3') { // terminate employee
 					System.out.print("Please enter the name of the employee you wish to terminate: ");
-					String name = key.nextLine();
+					Scanner scan = new Scanner(System.in);
+					String name = scan.nextLine();
 					if(Employee.checkEmployee(name) == true) {
 						Employee.removeEmployee(name);
 						System.out.println(name + " has been removed");
@@ -54,27 +53,27 @@ public class SplashPage {
 					else if(Employee.checkEmployee(name) == false) {
 						System.out.println(name + " does not exist in your employee list");
 					}
-					
+				
 				}
 				else if (n == '4') { // add employee
 					System.out.println("Enter the name of the employee: ");
-					String name = key.nextLine();
-					if(Employee.checkEmployee(name) == true) {
-						System.out.println(name + " is already listed in your system.");
-					}
-					if(Employee.checkEmployee(name) == false) {
-						Employee.addEmployee(name);
-						System.out.println(name + " was added successfully.");
-					}
+					Scanner keys = new Scanner(System.in);
+					String name = keys.nextLine();
+							if(Employee.checkEmployee(name) == true) {
+								System.out.println(name + " is already listed in your system.");
+							}
+							if(Employee.checkEmployee(name) == false) {
+								Employee.addEmployee(name);
+								System.out.println(name + " was added successfully.");
+								
+							}
 					
-				}
-		}
-		}
-				
 			
-		
+				}
+			} // end of Manager settings
+		} // end of checking for Manager
+				
 		else if (p == 'E') {
-			//sc.close();
 			//what the employees see (prompt for taking orders)
 			System.out.println("Welcome Valued Employee");
 			System.out.println("Please Enter Order Below:");
@@ -85,12 +84,12 @@ public class SplashPage {
 		else {
 			System.out.println("Sorry, that couldn't be read,");
 			System.out.println("Restarting the process");
-			continue;
+			
 			}
 		
 	}
 }
 
-}
+
 
 
