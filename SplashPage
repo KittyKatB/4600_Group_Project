@@ -1,95 +1,113 @@
 import java.util.*;
 import java.util.HashSet;
 import java.util.Scanner;
+import java.util.HashMap;
 
 public class SplashPage {
 
 	public static void main(String[] args) {
 
 		restaurant KLR = new restaurant();
-
-		Scanner key = new Scanner(System.in);
+		Menu m = new Menu();
+		KLR.populateData();
 		
+
+
 		//Initial Login Page 
-	   // boolean b = true;
-	   // while(b = true) {
+	    boolean b = true;
+	    while(b = true) {
 		
 		System.out.println("***Welcome to KLR's Restaurant Management Software***");
 		System.out.println();
 		System.out.println("Press M for Manager | Press E for Employee");
 		
-		char p = key.next().charAt(0);
-	
-		if(p == 'M') { //Checks for manager
+		Scanner sc = new Scanner(System.in);
+		char p = sc.next().charAt(0);
+				
+		//Checks for manager
+				
+		if(p == 'M') {
 			System.out.println("Please input Password:");
-			int password = 1234;	
-			int pw = key.nextInt();
-			
-			if(pw == password) { // Manager Settings
-				System.out.println("Hello " + Manager.manager  + "!");
+			int password = 1234;
+			Scanner pass = new Scanner(System.in);	
+			int pw = pass.nextInt();
+			if(pw == password) {
+				//prompt manager gets (Everything an employee gets, plus hire, fire, and restock)
+				System.out.println("Hello "   + "!");
 				System.out.println("To create an order, press (1),");
 				System.out.println("To Print Employee Database, press (2)");
 				System.out.println("To Fire employee, press (3)");
 				System.out.println("To Add a New Employee, press (4)");
-				char n = key.next().charAt(0);
+				Scanner op = new Scanner(System.in);
+				char n = op.next().charAt(0);
 				
 				if(n == '1') {
-					//Create order code
-					System.out.print("order");
+					//order code
+					m.printMenu();
+					m.populateMenu();
+					Scanner mo = new Scanner(System.in);
+					String stf = mo.next();
+					m.totalPrice(stf);
+					
 					
 				}
-				else if (n == '2') { // print database
-					Employee.employeeDatabase();
+				else if (n == '2') {
+						//Print database
+					KLR.employeeDatabase();
+					break;
+				
 						}
-				
-				else if (n =='3') { // terminate employee
-					System.out.print("Please enter the name of the employee you wish to terminate: ");
-					Scanner scan = new Scanner(System.in);
-					String name = scan.nextLine();
-					if(Employee.checkEmployee(name) == true) {
-						Employee.removeEmployee(name);
-						System.out.println(name + " has been removed");
-					}
-					else if(Employee.checkEmployee(name) == false) {
-						System.out.println(name + " does not exist in your employee list");
-					}
-				
-				}
-				else if (n == '4') { // add employee
-					System.out.println("Enter the name of the employee: ");
-					Scanner keys = new Scanner(System.in);
-					String name = keys.nextLine();
-							if(Employee.checkEmployee(name) == true) {
-								System.out.println(name + " is already listed in your system.");
-							}
-							if(Employee.checkEmployee(name) == false) {
-								Employee.addEmployee(name);
-								System.out.println(name + " was added successfully.");
-								
-							}
+				else if (n =='3') {
+					System.out.println("Please enter the name of the employee you want to fire:");
+					Scanner fire = new Scanner(System.in);
+					String nem = fire.next();
+					KLR.removeEmployee(nem);
+					System.out.println("The updated List is: ");
+					KLR.employeeDatabase();
+					System.out.println("Bye Bye " + nem + "!");
+					break;
 					
-			
 				}
-			} // end of Manager settings
-		} // end of checking for Manager
+				else if (n == '4') {
+					//hire emp
+					System.out.println("Enter the name of the employee: ");
+					Scanner name = new Scanner(System.in);
+					String na = name.next();
+					KLR.addEmployee(na); 
+					KLR.employeeDatabase();
+					System.out.println("Welcome to the Team, " + na);
+					
+
+				}
+			}
+		}
 				
+			
+		
 		else if (p == 'E') {
 			//what the employees see (prompt for taking orders)
 			System.out.println("Welcome Valued Employee");
 			System.out.println("Please Enter Order Below:");
 			
 			//Code for Ordering
+			m.printMenu();
+			m.populateMenu();
+			Scanner mo = new Scanner(System.in);
+			String stf = mo.next();
+			m.totalPrice(stf);
 			
-							}
+			}
+		
 		else {
-			System.out.println("Sorry, that couldn't be read,");
+			System.out.println("Sorry, that couldnt be read,");
 			System.out.println("Restarting the process");
-			
+			continue;
 			}
 		
 	}
 }
 
+}
 
 
 
