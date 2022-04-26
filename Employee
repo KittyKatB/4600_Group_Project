@@ -46,9 +46,12 @@ public class Employee {
 		
 		// display all employees
 		public static void employeeDatabase() {
+			System.out.print("Employees: ");
 			for (String i : employees) {
-				System.out.println(i);
+				System.out.print(i + " ");
 			}
+			System.out.println("");
+			System.out.println("Manager: " + Manager.print());
 		}
 		
 		
