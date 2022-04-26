@@ -25,15 +25,18 @@ public class SplashPage {
 		char p = sc.next().charAt(0);
 				
 		//Checks for manager
-				
+		
 		if(p == 'M') {
 			System.out.println("Please input Password:");
 			int password = 1234;
 			Scanner pass = new Scanner(System.in);	
 			int pw = pass.nextInt();
 			if(pw == password) {
+				
 				//prompt manager gets (Everything an employee gets, plus hire, fire, and restock)
+				
 				System.out.println("Hello "   + "!");
+				while(b=true) {
 				System.out.println("To create an order, press (1),");
 				System.out.println("To Print Employee Database, press (2)");
 				System.out.println("To Fire employee, press (3)");
@@ -54,9 +57,8 @@ public class SplashPage {
 				else if (n == '2') {
 						//Print database
 					KLR.employeeDatabase();
-					break;
-				
 						}
+				
 				else if (n =='3') {
 					System.out.println("Please enter the name of the employee you want to fire:");
 					Scanner fire = new Scanner(System.in);
@@ -65,7 +67,6 @@ public class SplashPage {
 					System.out.println("The updated List is: ");
 					KLR.employeeDatabase();
 					System.out.println("Bye Bye " + nem + "!");
-					break;
 					
 				}
 				else if (n == '4') {
@@ -108,6 +109,6 @@ public class SplashPage {
 }
 
 }
-
+}
 
 
