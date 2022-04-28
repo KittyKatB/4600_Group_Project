@@ -70,11 +70,13 @@ public class Menu{
 			}
 			else if(input == '6') {
 				pieTally++;
-			}	
+			}
+			
 		}
 
 		
 		double pat = 0;
+		
 		
 		pat = (soupTally * menu.get("soup")) + (saladTally * menu.get("salad")); 
 		pat = pat + (sandTally * menu.get("sandwich"));
@@ -84,6 +86,12 @@ public class Menu{
 		
 		System.out.println("Total Price, plus tax: " + pat);
 		System.out.println("Thank You!");
+
 		
-	}	
+	}
+	
+
+	
+	
 }
+	//make method that pulls out price (get object method), pulls id and returns specific obj
