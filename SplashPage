@@ -81,16 +81,12 @@ public class SplashPage {
 
 				}
 			}
-		}
+			}
 				
-			
+		}
 		
 		else if (p == 'E') {
 			//what the employees see (prompt for taking orders)
-			System.out.println("Welcome Valued Employee");
-			System.out.println("Please Enter Order Below:");
-			
-			//Code for Ordering
 			m.printMenu();
 			m.populateMenu();
 			Scanner mo = new Scanner(System.in);
@@ -104,11 +100,12 @@ public class SplashPage {
 			System.out.println("Restarting the process");
 			continue;
 			}
+			
 		
+			}
+	    }
 	}
-}
 
-}
-}
+
 
 
